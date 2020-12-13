@@ -1,7 +1,7 @@
-import Login from "./views/Login";
+import Routes from "./Routes";
 
 function App() {
-  return <Login />
+  return <Routes />
 }
 
 export default App;
