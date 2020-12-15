@@ -2,15 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import tw from 'twin.macro';
-import { StyledButton } from '../Button/Button';
 
-const Container = tw.div`
-  bg-yellow-400 h-16 flex flex-row w-full
-  items-center justify-between px-5
+const Container = styled.div`
+  ${tw`h-16 flex flex-row w-full 
+    items-center justify-between px-5`}
+  ${(props) => (props.transparent ? tw`bg-transparent text-blue-800` : tw`bg-blue-900 text-gray-100`)}
 `;
 
 const Title = tw.h1`
-  text-xl text-white pl-5 font-mono
+  text-xl pl-5 font-mono
 `;
 
 const NavItemContainer = styled.section`
@@ -18,23 +18,21 @@ const NavItemContainer = styled.section`
 `;
 
 const NavItem = tw.span`
-  text-white text-base px-5
+  text-base px-5
 `;
 
-const Nav = () => {
+export const Nav = ({transparent}) => {
   return (
-    <Container>
+    <Container transparent={transparent}>
       <Title>DashBOARD</Title>
       <NavItemContainer>
-        <Link to='/auth'>
+        <Link to="/auth">
           <NavItem>Login</NavItem>
         </Link>
-        {/* <Link to='/auth/signup'>
-          <NavItem></NavItem>
-        </Link> */}
+        <Link to="/auth/signup">
+          <NavItem>Sign up</NavItem>
+        </Link>
       </NavItemContainer>
     </Container>
   );
 };
-
-export default Nav;
