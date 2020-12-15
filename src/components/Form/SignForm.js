@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Input from '../Input/Input';
+import Input from './Input';
 import { LinkUrl } from '../Link/LinkUrl';
 import FormLayout from '../../layouts/FormLayout';
 
